@@ -1,1 +1,1 @@
-gcc MessageQ.c -lrt -lpthread
+gcc MessageQ.c -o MQ -lrt -lpthread

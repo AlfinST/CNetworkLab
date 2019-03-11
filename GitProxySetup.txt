@@ -1,0 +1,5 @@
+When using MECAP use :-
+git config --global http.proxy http://mec:mec@192.168.0.4:3128
+
+Once done , use this :-
+git config --global --unset http.proxy

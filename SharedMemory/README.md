@@ -1,4 +1,4 @@
-# This program was a pain in the rear to implement.
+# Эта программа была боль в тылу для реализации
 ## To compile it use:
     gcc ShmClientz.c  -o Node -lpthread -lpthread
 
@@ -21,7 +21,7 @@
     2.Already Exists    
     3. ...  
 
-        1. Is already solveed by using appropiate flags like S_IRWXU which is equivalent to 0666(permission to read ,wite and execute to everyone).
+        1. Is already solved by using appropiate flags like S_IRWXU which is equivalent to 0666(permission to read ,wite and execute to everyone).
             Feel free to change the falg 0660 to any in the semaphors used in the programs. 
 
         2. using the O_EXCL flag helps ... kinda ..... maybe . OK, i dont know exactly if it helps cause I just go to /dev/shm/ and delete all the 

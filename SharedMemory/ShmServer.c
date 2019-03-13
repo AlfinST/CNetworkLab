@@ -3,7 +3,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <string.h>
 #include <unistd.h>
 #include <semaphore.h>
 #include <sys/mman.h>
@@ -66,16 +65,17 @@ int main (int argc, char **argv)
           // forever
        if (sem_wait (spool_signal_sem) == -1)
             error ("sem_wait: spool_signal_sem");
+
+        
+        
+        printf("Value of Number is: %d \t Incremented By %d\n",shared_memory_ptr->Number,shared_memory_ptr->Active_Client);
            
         if(shared_memory_ptr->Number ==(10*(shared_memory_ptr->Number_of_Clients)))
         {
-            printf("\nEnough With the incremnting\nServer Shuting Down!");   
+            printf("\nEnough With the incremnting\nServer Shuting Down!\n");   
             exit(1);
         }
-        else
-        {
-            printf("Value of Number is: %d \t Incremented By %d\n",shared_memory_ptr->Number,shared_memory_ptr->Active_Client);
-        }
+        
         
     }
 }

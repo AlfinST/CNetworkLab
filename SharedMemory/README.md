@@ -29,7 +29,7 @@
             I read the using sem_unlink() might help/is a good practice. 
         
         3.The error handeling could have been done better but its waay too much work.
-## Its adviced to remove the files in /dev/shm/ as it might affect the server program after a few runs.
+## It's adviced to remove the files in /dev/shm/ as it might affect the server program after a few runs.
 ## How to control the program ?
     -The variable x is used in the Client/"Node" program change to determine the number of times that program should increment the Number.
 

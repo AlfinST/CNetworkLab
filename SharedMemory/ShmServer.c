@@ -11,10 +11,12 @@
 #define SEM_MUTEX_NAME "/sem-mutex"
 #define SHARED_MEM_NAME "/posix-shared-mem-example"
 #define SEM_SPOOL_SIGNAL_NAME "/sem-spool-signal"
+
 struct shared_memory
 {
     int Number;
     int Number_of_Clients;
+    int Active_Client;
 };
 
 void error (char *msg);
@@ -63,14 +65,16 @@ int main (int argc, char **argv)
     {
           // forever
        if (sem_wait (spool_signal_sem) == -1)
-            error ("sem_wait: spool_signal_sem")
+            error ("sem_wait: spool_signal_sem");
            
-        if (shared_memory_ptr->Number ==19){
+        if(shared_memory_ptr->Number ==(10*(shared_memory_ptr->Number_of_Clients)))
+        {
             printf("\nEnough With the incremnting\nServer Shuting Down!");   
-            exit(1);}
+            exit(1);
+        }
         else
         {
-            printf("Value of Number is: %d\n",shared_memory_ptr->Number);
+            printf("Value of Number is: %d \t Incremented By %d\n",shared_memory_ptr->Number,shared_memory_ptr->Active_Client);
         }
         
     }

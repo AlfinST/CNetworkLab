@@ -17,14 +17,15 @@
 struct shared_memory
 {
     int Number;
-
+    int Number_of_Clients;
+    int Active_Client;
 };
 
 void error (char *msg);
 
 int main (int argc, char **argv)
 {
-    int x=20;
+    int x=10,client_number;
     struct shared_memory *shared_mem_ptr;
     sem_t *mutex_sem, *spool_signal_sem;
     int fd_shm;
@@ -32,20 +33,23 @@ int main (int argc, char **argv)
         // Get shared memory 
     if ((fd_shm = shm_open (SHARED_MEM_NAME, O_EXCL|O_RDWR, S_IRWXU)) == -1)
         error ("shm_open");
-    printf("Shared Memory accessed");
+    printf("Shared Memory accessed\n");
 
     if ((mutex_sem = sem_open (SEM_MUTEX_NAME,O_EXCL, 0660,0)) == SEM_FAILED)
         error ("sem_open");
-    printf("Mutex Sem Done !");
+    printf("Mutex Sem Done !\n");
 
     if ((shared_mem_ptr = mmap (NULL, sizeof (struct shared_memory), PROT_READ | PROT_WRITE, MAP_SHARED,fd_shm, 0)) == MAP_FAILED)
        error ("mmap");
-    printf("Memory Mapped");
+    printf("Memory Mapped\n");
     
 
     if ((spool_signal_sem = sem_open (SEM_SPOOL_SIGNAL_NAME,O_EXCL, 0660, 0)) == SEM_FAILED)
         error ("sem_open");
-    printf("Spool Done");
+    printf("Spool Done\n");
+
+    client_number=(shared_mem_ptr->Number_of_Clients)+1;
+    (shared_mem_ptr->Number_of_Clients)++;
 
     while (x--) {
         
@@ -58,6 +62,7 @@ int main (int argc, char **argv)
 	    // Critical section
                                    
             (shared_mem_ptr->Number)++;
+            (shared_mem_ptr->Active_Client)=client_number;
     // Release mutex sem: V (mutex_sem)
         if (sem_post (mutex_sem) == -1)
             error ("sem_post: mutex_sem");
@@ -66,8 +71,8 @@ int main (int argc, char **argv)
         if (sem_post (spool_signal_sem) == -1)
             error ("sem_post: (spool_signal_sem");
 
-    printf ("\t A Process incremented The Number ");
-        sleep(10);
+    printf ("\t Process %d incremented The Number\n",shared_mem_ptr->Active_Client);
+        sleep(1);
     }
 }
 

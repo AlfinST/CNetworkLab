@@ -14,7 +14,7 @@
 struct shared_memory
 {
     int Number;
-
+    int Number_of_Clients;
 };
 
 void error (char *msg);
@@ -47,6 +47,7 @@ int main (int argc, char **argv)
 
 
     shared_memory_ptr ->Number=0;
+    shared_memory_ptr ->Number_of_Clients=0;
     
     if ((spool_signal_sem = sem_open (SEM_SPOOL_SIGNAL_NAME, O_CREAT, 0644, 0)) == SEM_FAILED)
          error ("sem_open");
@@ -62,10 +63,8 @@ int main (int argc, char **argv)
     {
           // forever
        if (sem_wait (spool_signal_sem) == -1)
-            error ("sem_wait: spool_signal_sem");
-    
-        //strcpy (mybuf, shared_mem_ptr -> buf [shared_mem_ptr -> buffer_print_index]);
-        
+            error ("sem_wait: spool_signal_sem")
+           
         if (shared_memory_ptr->Number ==19){
             printf("\nEnough With the incremnting\nServer Shuting Down!");   
             exit(1);}

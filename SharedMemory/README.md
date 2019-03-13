@@ -1,9 +1,9 @@
-#This program was a pain in the rear to implement.
-##To compile it use:
+# This program was a pain in the rear to implement.
+## To compile it use:
     gcc ShmClientz.c  -o Node -lpthread -lpthread
 
     gcc ShmServer.c -0 Host -lpthread -lrt
-##How to Run:
+## How to Run:
 
     1.For single process incrementor:
         On running the "Host" first you get a bunch of initial messages about stuff getiing setup and initaialted
@@ -16,7 +16,7 @@
         Watch the magic
 
 
-##Some common error we run into 
+## Some common error we run into 
     1.Permission    
     2.Already Exists    
     3. ...  
@@ -29,15 +29,15 @@
             I read the using sem_unlink() might help/is a good practice. 
         
         3.The error handeling could have been done better but its waay too much work.
-#Its adviced to remove the files in /dev/shm/ as it might affect the server program after a few runs.
-##How to control the program ?
+# Its adviced to remove the files in /dev/shm/ as it might affect the server program after a few runs.
+## How to control the program ?
     -The variable x is used in the Client/"Node" program change to determine the number of times that program should increment the Number.
 
     -There is a if condition in the Server/"Host" to determine when the program should terminate.
 
     -A sleep() is given in the Client/"Node" program to determine how frequently it increment. Its given as 10 (increments every 10 seconds)
 
-##What is race condition in Shared Memory ?
+## What is race condition in Shared Memory ?
     When a shared memory is accessed by 2 or more processes and try to change the same value , A race condition is acheved.
     Eg: 2 processes A,B ;
         both access a shared variable C;
@@ -45,4 +45,4 @@
         B changes to 20;
             if A tried to access C now it will get the wrong value 20 insted of 10 which it assigned.
 
-#There is a compact program called SemExample.c which is a Compact version of these 2 programs using threads.
+# There is a compact program called SemExample.c which is a Compact version of these 2 programs using threads.

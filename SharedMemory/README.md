@@ -10,7 +10,7 @@
         Then run the "Node". 
         In the code for the Client/"Node" it's shown that some messages like the Host are present .
             Those messages in Client need not appear when you run the program, but it still runs. (Not that you will bother with that (:p))
-    2.For mltiple process incrementor:
+    2.For multiple process incrementor:
         Run the host.
         Run multiple "Node" in different terminals
         Watch the magic

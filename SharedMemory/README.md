@@ -46,3 +46,4 @@
             if A tried to access C now it will get the wrong value 20 insted of 10 which it assigned.
 
 # There is a compact program called SemExample.c which is a Compact version of these 2 programs using threads.
+>This compact program is done using System V (system 5) not POSIX. Just use it as a reference.

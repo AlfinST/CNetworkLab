@@ -35,7 +35,7 @@
 
     -There is a if condition in the Server/"Host" to determine when the program should terminate.
 
-    -A sleep() is given in the Client/"Node" program to determine how frequently it increment. Its given as 10 (increments every 10 seconds)
+    -A sleep() is given in the Client/"Node" program to determine how frequently it increment. Its given as 1 (increments every 1 seconds)
 
 ## What is race condition in Shared Memory ?
     When a shared memory is accessed by 2 or more processes and try to change the same value , A race condition is acheved.

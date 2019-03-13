@@ -40,10 +40,10 @@
 ## What is race condition in Shared Memory ?
     When a shared memory is accessed by 2 or more processes and try to change the same value , A race condition is acheved.
     Eg: 2 processes A,B ;
-        both access a shared variable C;
-        A changes to 10;
-        B changes to 20;
-            if A tried to access C now it will get the wrong value 20 insted of 10 which it assigned.
+        both access a shared variable 'c';
+        A changes 'c' to 10;
+        B changes 'c' to 20;
+            if A tried to access 'c' now it will get the wrong value 20 insted of 10 which it assigned.
 
 ## There is a compact program called SemExample.c which is a Compact version of these 2 programs using threads.
 >This compact program is done using System V (system 5) not POSIX. Just use it as a reference.

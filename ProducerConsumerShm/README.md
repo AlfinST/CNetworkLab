@@ -1,8 +1,8 @@
 # У ада 3 врата: похоть, гнев и жадность.
 ## To compile it use
     gcc ShmController.c -o Cntrl -lpthread -lrt
-    gcc ProducerShm.c -o Cntrl -lpthread -lrt
-    gcc ConsumerShm.c -o Cntrl -lpthread -lrt
+    gcc ProducerShm.c -o Producer -lpthread -lrt
+    gcc ConsumerShm.c -o Consumer -lpthread -lrt
 ## How to Run :
     1. Run the Controller with ./Cntrl . Specify the buffer size. Get Initialisation Setup Messages. By default it runs forever.
     2. Run the Producer with ./Producer .Get Initialisation Setup Messages. By default it stops after creating 10 items in buffer.

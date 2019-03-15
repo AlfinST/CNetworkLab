@@ -17,4 +17,4 @@
     -To change the default value of 10 items per writer change the value of the x in the While Loop.
 
 ## Algorithm for this solution(2nd Reader-Writer Problem) is given in RWAlgo
-> Check you wikipedia for more.
+> Check out wikipedia for more.

@@ -6,7 +6,7 @@
 ## How to Run :
     1. Run the Controller with ./Cntrl . Get Initialisation Setup Messages. By default it runs forever.
     2. Run the Writer with ./Write .Get Initialisation Setup Messages. By default it stops after creating 10 items in buffer.
-    3. Run the Reader with ./Read  .Get Initialisation Setup Messages. By default it runs forecer.
+    3. Run the Reader with ./Read  .Get Initialisation Setup Messages. By default it runs forever.
 
 ## It's adviced to remove the files in /dev/shm/ as it might affect all programs after a few runs.
 > you have 3 hours figure it yourself on how to make it more clean and aviod this. DO IT YOURSELF!

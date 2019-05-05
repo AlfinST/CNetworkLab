@@ -16,7 +16,3 @@
     The names dont display at end of (pipes) program when run.
     Press the Enter Key, and they should display then.
     Feel free to fix this ploblem ! 
-
-    PS: this is just to check if you are reading this.
-        You can solve this problem by uncommenting the wait(0) in the end of the pipe program :P. 
-    

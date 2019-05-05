@@ -47,6 +47,7 @@ int main()
     }
     else
     {
+        
         close(fd[1]);
         read(fd[0],&L1,sizeof(L1));
         printf("\n\npipes are read\n");
@@ -72,9 +73,8 @@ int main()
         {
             printf("%s\n",L1.names[i]);
         }
-        //wait(0);
         close(fd[0]);
-        //exit(0);
+        exit(0);
 
     }
     

@@ -47,15 +47,10 @@ int main()
     }
     else
     {
-        
         close(fd[1]);
         read(fd[0],&L1,sizeof(L1));
         printf("\n\npipes are read\n");
 
-        for(i=0;i<L1.n;i++)
-        {
-            scanf("%s\n",L1.names[i]);
-        }
         for(i = 0; i < L1.n - 1 ; i++)
         {
             for (j = i + 1; j < L1.n; j++)

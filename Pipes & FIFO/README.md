@@ -12,7 +12,3 @@
     1. use pipes to send
     2. use FIFO to send
 
-## DO NOT PANIC IF 
-    The names dont display at end of (pipes) program when run.
-    Press the Enter Key, and they should display then.
-    Feel free to fix this ploblem ! 

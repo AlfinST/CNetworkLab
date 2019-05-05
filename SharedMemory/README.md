@@ -1,8 +1,8 @@
 # Эта программа была боль в тылу для реализации
 ## To compile it use:
-    gcc ShmClientz.c  -o Node -lpthread -lpthread
+    gcc ShmClientz.c  -o Node -lpthread -lrt
 
-    gcc ShmServer.c -0 Host -lpthread -lrt
+    gcc ShmServer.c -o Host -lpthread -lrt
 ## How to Run:
 
     1.For single process incrementor:

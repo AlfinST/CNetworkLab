@@ -33,17 +33,14 @@ int main() {
 	servaddr.sin_port = htons(PORT); 
 	
 	// Bind the socket with the server address 
-	if ( bind(sockfd, (const struct sockaddr *)&servaddr, 
-			sizeof(servaddr)) < 0 ) 
+	if ( bind(sockfd, (const struct sockaddr *)&servaddr,sizeof(servaddr)) < 0 ) 
 	{ 
 		perror("bind failed"); 
 		exit(EXIT_FAILURE); 
 	} 
 	
 	int len, n; 
-	n = recvfrom(sockfd, (char *)buffer, MAXLINE, 
-				MSG_WAITALL, ( struct sockaddr *) &cliaddr, 
-				&len); 
+	n = recvfrom(sockfd, (char *)buffer, MAXLINE, MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len); 
 	buffer[n] = '\0'; 
 	printf("Client : %s\n", buffer); 
 	sendto(sockfd, (const char *)hello, strlen(hello), 

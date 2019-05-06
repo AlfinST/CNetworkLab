@@ -1,0 +1,45 @@
+stdio
+stdlin
+netinet/in
+sys/socket
+sys/types
+unistd
+arpa/inet
+string
+
+//SERVER
+int sock 
+buffer
+hello
+struct sockaddr_in servaddr ,cliaddr
+sock=socket(AF_INET,SOCK_DGRAM,0)
+
+memset(&servaddr,0,sizeof(servaddr))
+memset(&cliaddr,0,sizeof(cliaddr))
+
+servaddr.sin_family=AF_INET
+servaddr.sin_port=htons(PORT)
+servaddr.sin_sin_addr.s_addr=INADDR_ANY
+
+bind(sock,(const struct sockaddr *)&servaddr,sizeof(servaddr))
+len =n
+n=recvfrom(sock,(char*)buffer,MSG_MAXLINE,MSG_WAITALL,( struct sockaddr *)&cliaddr,&len);
+buffer[n]='\0'
+
+sendto(sock,(const char*)hello,strlen(hello),MSG_CONFIRM,( struct sockaddr *)&cliaddr,len)
+
+//CLIENT
+sock=socket(AF_INET,SOCK_DGRAM,0)
+
+memset(&servaddr,0,sizeof(servaddr))
+
+    servaddr.sin_family = AF_INET; 
+    servaddr.sin_port = htons(PORT); 
+    servaddr.sin_addr.s_addr = INADDR_ANY; 
+
+int n,len
+sendto(sock,(char const*)hello,strlen(hello),MSG_CONFIRM,)
+recvfrom()
+close(sock)
+
+

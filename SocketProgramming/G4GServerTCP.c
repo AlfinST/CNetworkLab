@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 { 
 	int server_fd, new_socket, valread; 
 	struct sockaddr_in address; 
-	int opt = 1; 
+//	int opt = 1; 
 	int addrlen = sizeof(address); 
 	char buffer[1024] = {0}; 
 	char *hello = "Hello 4m S"; 
@@ -43,8 +43,7 @@ int main(int argc, char const *argv[])
 		perror("listen"); 
 		exit(EXIT_FAILURE); 
 	} 
-	if ((new_socket = accept(server_fd, (struct sockaddr *)&address, 
-					(socklen_t*)&addrlen))<0) 
+	if ((new_socket = accept(server_fd, (struct sockaddr *)&address,(socklen_t*)&addrlen))<0) 
 	{ 
 		perror("accept"); 
 		exit(EXIT_FAILURE); 

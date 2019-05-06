@@ -1,0 +1,48 @@
+HEADERS
+
+unistd
+stdio
+sys/socket
+stdlib
+netinet/in
+string
+
+//SERVER
+
+
+int sock,new_socket,
+struct sockaddr_in address;
+socket(AF_INET,SOCK_STREAM,0)
+hello=""
+
+address.sin_family=AF_INET
+address.sin_addr.s_addr=INADDR_ANY
+address.sin_host=htons(PORT)
+
+bind(sock,(struct sockaddr *)&address,sizeof(address));
+
+listen(sock,3)
+
+new_sock=accept(sock,(struct sockaddr *)&address,(socklen_t*)&addrlen)
+
+valrad=read(new_sock,buffer,1024)
+
+send(new_sock,hello,strlen(hello,0))
+
+return 0
+
+
+//CLIENT
+
+struct sockaddr_in address;
+sock=socket(AF_INET,SOCK_STREAM,0);
+memset(&address,'0',sizeof(address))
+
+address.sin_family=AF_INET
+address.sin_port=htons(PORT)
+inet_pton(AF_INET,"127.0.0.0",&addr(sin_addr))
+
+connect(sock,(struct sockaddr *)&address,sizeof(address))
+send(sock,hello,strlen(hello),0)
+
+valread=read(sock,buffer,1024)

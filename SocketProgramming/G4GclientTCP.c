@@ -8,7 +8,7 @@
 
 int main(int argc, char const *argv[]) 
 { 
-	struct sockaddr_in address; 
+	//struct sockaddr_in address; 
 	int sock = 0, valread; 
 	struct sockaddr_in serv_addr; 
 	char *hello = "Hello 4m C"; 

@@ -1,3 +1,12 @@
 # CNetworkLab
 This is a log of the Computer Network Lab work.
-> Легко жить с закрытыми глазами 
+
+# List of Contributers :
+> * Альфин С Томас
+> * Джоэл Виланилам Захария
+
+## Push requests are Welcome! 
+> Some of these programs can be done in way more simple and compact !
+
+### Легко жить с закрытыми глазами
+### Смею вас открыть их!

@@ -8,7 +8,7 @@
     2. Run the Writer with ./Write .Get Initialisation Setup Messages. By default it stops after creating 10 items in buffer.
     3. Run the Reader with ./Read  .Get Initialisation Setup Messages. By default it runs forever.
 
-## It's adviced to remove the files in /dev/shm/ as it might affect all programs after a few runs.
+## It's advised to remove the files in /dev/shm/ as it might affect all programs after a few runs.
 > you have 3 hours figure it yourself on how to make it more clean and aviod this. DO IT YOURSELF!
 ## How to Control the program
     -you can change the frequency of activity by changing the sleep() in reader and writer.By default
